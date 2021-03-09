@@ -150,7 +150,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'terryma/vim-smooth-scroll'
 
     " 命令栏显示函数
-    Plug 'Shougo/echodoc.vim'
+    " Plug 'Shougo/echodoc.vim'
 
     " 代码、注释、表格对齐
     Plug 'godlygeek/tabular'
@@ -289,7 +289,7 @@ noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
 noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
 
 " echodoc.vim
-let g:echodoc_enable_at_startup = 1
+" let g:echodoc_enable_at_startup = 1
 
 " tabular
 " nnoremap <leader>l :Tab /\|<cr>
@@ -317,7 +317,36 @@ nnoremap <silent> <leader> :WhichKey','<CR>
 " commentary
 autocmd FileType json setlocal commentstring=//\ %s
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-go
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_extra_types = 1
+let g:go_fmt_command = "goimports"
+let g:go_fmt_fail_silently = 1
+let g:go_fmt_autosave = 0
+let g:go_play_open_browser = 0
+let g:go_auto_type_info = 1
+
+au FileType go nmap <leader>rr <Plug>(go-run)
+au FileType go nmap <leader>rd :GoDebugStart<cr>
+au FileType go nmap <leader>rs :GoDebugStop<cr>
+
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+au FileType go nmap <Leader>s <Plug>(go-implements)
+au FileType go nmap <Leader>i :GoImpl<cr>
+au FileType go nmap <Leader>e <Plug>(go-rename)
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 函数设置
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 source $HOME/.config/nvim/function.vim
@@ -325,5 +354,3 @@ source $HOME/.config/nvim/function.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 映射设置
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-autocmd FileType go nnoremap <leader>l :GoImports<cr>:GoLint<cr>

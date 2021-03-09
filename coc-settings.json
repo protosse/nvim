@@ -1,10 +1,29 @@
 {
-  "coc.preferences.formatOnType": true,
-  "coc.preferences.formatOnSaveFiletypes": ["go"],
-  "coc.preferences.rootPatterns": [".vim",".git"],
-
-  "suggest.echodocSupport": true,
-  "suggest.floatEnable": false,
-  "coc.preferences.bracketEnterImprove": true,
-  "coc.preferences.hoverTarget": "echo"
+    "coc.preferences.bracketEnterImprove": true,
+    "coc.preferences.formatOnSaveFiletypes": [
+        "go"
+    ],
+    "coc.preferences.formatOnType": true,
+    "coc.preferences.hoverTarget": "echo",
+    "coc.preferences.rootPatterns": [
+        ".vim",
+        ".git"
+    ],
+    "languageserver": {
+        "go": {
+            "command": "gopls",
+            "filetypes": [
+                "go"
+            ],
+            "initializationOptions": {
+                "usePlaceholders": true
+            },
+            "rootPatterns": [
+                "go.mod"
+            ],
+            "trace.server": "verbose"
+        }
+    },
+    "suggest.echodocSupport": true,
+    "suggest.floatEnable": false
 }
