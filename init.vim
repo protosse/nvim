@@ -150,7 +150,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'terryma/vim-smooth-scroll'
 
     " 命令栏显示函数
-    " Plug 'Shougo/echodoc.vim'
+    Plug 'Shougo/echodoc.vim'
 
     " 代码、注释、表格对齐
     Plug 'godlygeek/tabular'
@@ -166,7 +166,12 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " which key
     Plug 'liuchengxu/vim-which-key'
-call plug#end()
+
+    " snips
+    Plug 'SirVer/ultisnips'
+    Plug 'honza/vim-snippets'
+
+    call plug#end()
 
 " 自动安装缺失插件 
 autocmd VimEnter *
@@ -289,7 +294,7 @@ noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
 noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
 
 " echodoc.vim
-" let g:echodoc_enable_at_startup = 1
+let g:echodoc_enable_at_startup = 1
 
 " tabular
 " nnoremap <leader>l :Tab /\|<cr>
@@ -345,6 +350,12 @@ au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
 au FileType go nmap <Leader>s <Plug>(go-implements)
 au FileType go nmap <Leader>i :GoImpl<cr>
 au FileType go nmap <Leader>e <Plug>(go-rename)
+
+" snips
+let g:UltiSnipsExpandTrigger="<s-tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 函数设置
