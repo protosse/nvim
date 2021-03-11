@@ -25,5 +25,9 @@
         }
     },
     "suggest.echodocSupport": true,
-    "suggest.floatEnable": false
+    "suggest.floatEnable": false,
+    "go.tags":{
+        "transform": "camelcase",
+        "options":""
+    }
 }
