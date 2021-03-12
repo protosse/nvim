@@ -171,6 +171,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'SirVer/ultisnips'
     Plug 'honza/vim-snippets'
 
+    Plug 'junegunn/vim-slash'
+    Plug 'mileszs/ack.vim'
+
     call plug#end()
 
 " 自动安装缺失插件 
@@ -284,6 +287,9 @@ let g:tagbar_type_go = {
 	\ 'ctagsargs' : '-sort -silent'
 \ }
 
+" vim-repeat
+silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
+
 " vim-easymotion
 let g:EasyMotion_smartcase = 1
 map <leader>w <Plug>(easymotion-bd-w)
@@ -368,4 +374,3 @@ source $HOME/.config/nvim/function.vim
 " 映射设置
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <F5> <esc>:w<cr>
-
