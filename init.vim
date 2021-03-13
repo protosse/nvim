@@ -152,17 +152,11 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " 命令栏显示函数
     Plug 'Shougo/echodoc.vim'
 
-    " 代码、注释、表格对齐
-    Plug 'godlygeek/tabular'
-
     " coc
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
      
     " golang
     Plug 'fatih/vim-go'
-
-    " terminal
-    Plug 'voldikss/vim-floaterm'
 
     " which key
     Plug 'liuchengxu/vim-which-key'
@@ -287,6 +281,8 @@ let g:tagbar_type_go = {
 	\ 'ctagsargs' : '-sort -silent'
 \ }
 
+nmap <F8> :TagbarToggle<CR>
+
 " vim-repeat
 silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
 
@@ -304,25 +300,8 @@ noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
 " echodoc.vim
 let g:echodoc_enable_at_startup = 1
 
-" tabular
-" nnoremap <leader>l :Tab /\|<cr>
-" nnoremap <leader>= :Tab /=<cr>
-
 " coc
 source $HOME/.config/nvim/coc.vim
-
-" Floaterm
-let g:floaterm_keymap_toggle = '<F1>'
-let g:floaterm_keymap_next   = '<F2>'
-let g:floaterm_keymap_prev   = '<F3>'
-let g:floaterm_keymap_new    = '<F4>'
-let g:floaterm_title=''
-let g:floaterm_gitcommit='floaterm'
-let g:floaterm_autoinsert=1
-let g:floaterm_width=0.8
-let g:floaterm_height=0.8
-let g:floaterm_wintitle=0
-let g:floaterm_autoclose=1
 
 " whichKey
 nnoremap <silent> <leader> :WhichKey','<CR>
