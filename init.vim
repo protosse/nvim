@@ -391,3 +391,6 @@ source $HOME/.config/nvim/function.vim
 " 映射设置
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <F5> <esc>:w<cr>
+" c-s 保存
+imap <c-s> <esc>:w<cr>a
+map <c-s> :w<cr>
