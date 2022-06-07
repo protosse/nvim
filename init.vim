@@ -169,6 +169,11 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " 模糊查找
     Plug 'mileszs/ack.vim'
 
+    " post install (yarn install | npm install) then load plugin only for editing supported files
+    Plug 'prettier/vim-prettier', {
+        \ 'do': 'npm install --frozen-lockfile --production',
+        \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
+
     call plug#end()
 
 " 自动安装缺失插件 
@@ -278,6 +283,7 @@ let g:NERDTreeHighlightFoldersFullName = 1
 let g:NERDTreeDirArrowExpandable='▷'
 let g:NERDTreeDirArrowCollapsible='▼'
 let g:NERDTreeShowHidden=1
+let g:NERDTreeNaturalSort=1
 let NERDTreeIgnore=['.DS_Store']
 
 " nerdtree-git-plugin
